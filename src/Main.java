@@ -3,8 +3,32 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Main {
-	static int[] preference = new int[5];
-	static int[] frequency = new int[5];
+	public static int[] getPreference() {
+		return preference;
+	}
+
+	public static void setPreference(int[] preference) {
+		Main.preference = preference;
+	}
+
+	public static int getFrequency(int type) {
+		return frequency[type];
+	}
+
+	public static void setFrequency(int type, int value) {
+		frequency[type] = value;
+	}
+
+	public static int getOutputNum() {
+		return outputNum;
+	}
+
+	public static void setOutputNum(int outputNum) {
+		Main.outputNum = outputNum;
+	}
+
+	static int[] preference = new int[6];
+	static int[] frequency = new int[6];
 	static int[] dist = new int[300];
 	static int outputNum;
 	
@@ -13,35 +37,30 @@ public class Main {
 	
 	public static void main(String[] args)
 	{
+		for(int i=1; i<=5; i++)
+		{
+			preference[i] = 0;
+			frequency[i] = 0;
+		}
 		//파일에서 정점에 대한 정보들을 불러옴
 		//정점 정보를 저장
 		//해시맵에 저장 <int, Node>
-		Scanner input = new Scanner(System.in);
-		
-		V = input.nextInt();
-		E = input.nextInt();
-		
-		for(int i=0; i<V+1; i++) {
-			graph.add(new ArrayList<Road>());
-		}
-		
-		for(int i=0; i<E; i++) {
-			int a = input.nextInt();
-			int b = input.nextInt();
-			int c = input.nextInt();
-			
-			graph.get(a).add(new Road(b, c));
-		}
-		//그래프 구성
-		
-		
-		
-		//선호도와 빈도를 받는... 무언가의 코드... 아마 애드액션리스너를 통해 받겠죠?
-		int S = input.nextInt();
-		dijkstra(S);
-		//최단거리 계산, 현재 선호도 빈도 거리 모두 계산 완료
-		//오브젝트 생성
-		//식당 정보를 .dat 파일로 만들어서 여기서 읽어오고 오브젝트 배열에 저장
+		/*
+		 * Scanner input = new Scanner(System.in);
+		 * 
+		 * V = input.nextInt(); E = input.nextInt();
+		 * 
+		 * for(int i=0; i<V+1; i++) { graph.add(new ArrayList<Road>()); }
+		 * 
+		 * for(int i=0; i<E; i++) { int a = input.nextInt(); int b = input.nextInt();
+		 * int c = input.nextInt();
+		 * 
+		 * graph.get(a).add(new Road(b, c)); } //그래프 구성
+		 * 
+		 * 
+		 * int S = input.nextInt(); dijkstra(S);
+		 */
+		new Start();
 		RestNode[] rest = new RestNode[50];
 		//각 오브젝트는 setScore 실행
 		//오브젝트 배열 정렬

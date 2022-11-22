@@ -4,9 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Result extends JFrame {
-    Result(int totalEgg, int favoriteFood, int favoriteType, int ranking[]){
+    Result(int totalEgg, int favoriteFood, int favoriteType){
         //타이틀
         super("Result");
+        
+        for(int i=1; i<=5; i++)
+        {
+        	System.out.println(Main.getFrequency(i));
+        }
 
         //화면 구성
         JPanel jPanel = new JPanel();

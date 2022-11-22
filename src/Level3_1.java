@@ -21,9 +21,8 @@ public class Level3_1 extends JFrame {
         buttonKorea.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int[] ranking = new int[5];
-                ranking[0] = 0;
-                new Level3_2(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(1, 5);
+                new Level3_2(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         });
@@ -35,9 +34,8 @@ public class Level3_1 extends JFrame {
         buttonJapan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	int[] ranking = new int[5];
-                ranking[0] = 1;
-                new Level3_2(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(2, 5);
+                new Level3_2(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         });
@@ -49,9 +47,8 @@ public class Level3_1 extends JFrame {
         buttonChina.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	int[] ranking = new int[5];
-                ranking[0] = 2;
-                new Level3_2(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(3, 5);
+                new Level3_2(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         });
@@ -63,9 +60,8 @@ public class Level3_1 extends JFrame {
         buttonWestern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	int[] ranking = new int[5];
-                ranking[0] = 3;
-                new Level3_2(totalEgg, favoriteFood, favoriteType, ranking);
+                Main.setFrequency(4, 5);
+                new Level3_2(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         });
@@ -77,9 +73,8 @@ public class Level3_1 extends JFrame {
         buttonSnack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	int[] ranking = new int[5];
-                ranking[0] = 4;
-                new Level3_2(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(5, 5);
+                new Level3_2(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         }); 

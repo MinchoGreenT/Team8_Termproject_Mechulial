@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Level3_3 extends JFrame {
-    Level3_3(int totalEgg, int favoriteFood, int favoriteType, int ranking[]){
+    Level3_3(int totalEgg, int favoriteFood, int favoriteType){
         //타이틀
         super("Level3.3");
 
@@ -17,14 +17,14 @@ public class Level3_3 extends JFrame {
         JButton buttonKorea = new JButton("한식");
         buttonKorea.setBounds(19, 128, 123, 116);
         jPanel.add(buttonKorea);
-        if(ranking[0] == 0 || ranking[1] == 0)
+        if(Main.getFrequency(1) != 0)
         	buttonKorea.setVisible(false);
 
         buttonKorea.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 ranking[2] = 0;
-                 new Level3_4(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(1, 3);
+                 new Level3_4(totalEgg, favoriteFood, favoriteType);
                  setVisible(false);
             }
         });
@@ -32,14 +32,14 @@ public class Level3_3 extends JFrame {
         JButton buttonJapan = new JButton("일식");
         buttonJapan.setBounds(154, 128, 123, 116);
         jPanel.add(buttonJapan);
-        if(ranking[0] == 1 || ranking[1] == 1)
+        if(Main.getFrequency(2) != 0)
         	buttonJapan.setVisible(false);
 
         buttonJapan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ranking[2] = 1;
-                new Level3_4(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(1, 3);
+                new Level3_4(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         });
@@ -47,14 +47,14 @@ public class Level3_3 extends JFrame {
         JButton buttonChina = new JButton("중식");
         buttonChina.setBounds(289, 128, 123, 116);
         jPanel.add(buttonChina);
-        if(ranking[0] == 2 || ranking[1] == 2)
+        if(Main.getFrequency(3) != 0)
         	buttonChina.setVisible(false);
 
         buttonChina.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ranking[2] = 2;
-                new Level3_4(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(3, 3);
+                new Level3_4(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         });
@@ -62,14 +62,14 @@ public class Level3_3 extends JFrame {
         JButton buttonWestern = new JButton("양식");
         buttonWestern.setBounds(424, 128, 123, 116);
         jPanel.add(buttonWestern);
-        if(ranking[0] == 3 || ranking[1] == 3)
+        if(Main.getFrequency(4) != 0)
         	buttonWestern.setVisible(false);
 
         buttonWestern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ranking[2] = 3;
-                new Level3_4(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(4, 3);
+                new Level3_4(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         });
@@ -77,14 +77,14 @@ public class Level3_3 extends JFrame {
         JButton buttonSnack = new JButton("분식");
         buttonSnack.setBounds(559, 128, 123, 116);
         jPanel.add(buttonSnack);
-        if(ranking[0] == 4 || ranking[1] == 4)
+        if(Main.getFrequency(5) != 0)
         	buttonSnack.setVisible(false);
 
         buttonSnack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ranking[2] = 4;
-                new Level3_4(totalEgg, favoriteFood, favoriteType, ranking);
+            	Main.setFrequency(5, 3);
+                new Level3_4(totalEgg, favoriteFood, favoriteType);
                 setVisible(false);
             }
         }); 

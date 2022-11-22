@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
 class setEgg {
 	void clickButton(JButton button, int totalEgg) {
 		if(totalEgg == 1)
@@ -21,7 +23,6 @@ class setEgg {
 public class Start extends JFrame {
 	int totalEgg = 3;
 	setEgg setVal = new setEgg();
-
 	public Start() {
 
 		//≈∏¿Ã∆≤
@@ -45,6 +46,7 @@ public class Start extends JFrame {
 		buttonToLevel1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				Main.setOutputNum(totalEgg);
 				new Level1(totalEgg);
 				setVisible(false);
 			}
@@ -90,9 +92,5 @@ public class Start extends JFrame {
 
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		new Start();
 	}
 }
