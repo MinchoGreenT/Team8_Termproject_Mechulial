@@ -47,7 +47,7 @@ public class Start extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Main.setOutputNum(totalEgg);
-				new Level1(totalEgg);
+				new Level1();
 				setVisible(false);
 			}
 		});

@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Result extends JFrame {
-    Result(int totalEgg, int favoriteFood, int favoriteType){
+    Result(){
         //≈∏¿Ã∆≤
         super("Result");
         

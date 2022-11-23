@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Level3_5 extends JFrame {
-    Level3_5(int totalEgg, int favoriteFood, int favoriteType){
+    Level3_5(){
         //≈∏¿Ã∆≤
         super("Level3.5");
 
@@ -24,7 +24,7 @@ public class Level3_5 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Main.setFrequency(1, 1);
-                 new Result(totalEgg, favoriteFood, favoriteType);
+                 new Result();
                  setVisible(false);
             }
         });
@@ -39,7 +39,7 @@ public class Level3_5 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Main.setFrequency(2, 1);
-                new Result(totalEgg, favoriteFood, favoriteType);
+                new Result();
                 setVisible(false);
             }
         });
@@ -54,7 +54,7 @@ public class Level3_5 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Main.setFrequency(3, 1);
-                new Result(totalEgg, favoriteFood, favoriteType);
+                new Result();
                 setVisible(false);
             }
         });
@@ -69,7 +69,7 @@ public class Level3_5 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Main.setFrequency(4, 1);
-                new Result(totalEgg, favoriteFood, favoriteType);
+                new Result();
                 setVisible(false);
             }
         });
@@ -84,7 +84,7 @@ public class Level3_5 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Main.setFrequency(5, 1);
-                new Result(totalEgg, favoriteFood, favoriteType);
+                new Result();
                 setVisible(false);
             }
         }); 

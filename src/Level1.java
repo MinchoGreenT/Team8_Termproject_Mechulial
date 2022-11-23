@@ -23,7 +23,7 @@ class ImagePanel extends JPanel{
 
 public class Level1 extends JFrame {
 	
-    Level1(int totalEgg){
+    Level1(){
         //title
         super("Level1");
         
@@ -62,7 +62,7 @@ public class Level1 extends JFrame {
         buttonToLevel2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Level2_1(totalEgg);
+                new Level2_1();
                 setVisible(false);
             }
         });
