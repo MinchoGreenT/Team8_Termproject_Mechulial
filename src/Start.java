@@ -8,15 +8,15 @@ import java.awt.event.ActionListener;
 class setEgg {
 	void clickButton(JButton button, int totalEgg) {
 		if(totalEgg == 1)
-			button.setText("1");
+			button.setIcon(new ImageIcon(Start.class.getResource("/data/start_egg1.png")));
 		else if(totalEgg == 2)
-			button.setText("2");
+			button.setIcon(new ImageIcon(Start.class.getResource("/data/start_egg2.png")));
 		else if(totalEgg == 3)
-			button.setText("3");
+			button.setIcon(new ImageIcon(Start.class.getResource("/data/start_egg3.png")));
 		else if(totalEgg == 4)
-			button.setText("4");
+			button.setIcon(new ImageIcon(Start.class.getResource("/data/start_egg4.png")));
 		else
-			button.setText("5");
+			button.setIcon(new ImageIcon(Start.class.getResource("/data/start_egg5.png")));
 	}
 }
 
@@ -25,24 +25,28 @@ public class Start extends JFrame {
 	setEgg setVal = new setEgg();
 	public Start() {
 
-		//≈∏¿Ã∆≤
+		//≈∏ÔøΩÔøΩ∆≤
 		super("Start");
 		
 
-		//»≠∏È ±∏º∫
+		//»≠ÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ
 		JPanel mainPanel = new JPanel();
 		setSize(700, 400);
 		mainPanel.setLayout(null);
 		
-		//πˆ∆∞ ª˝º∫
-		JButton buttonToLevel1 = new JButton("3"); 
-		buttonToLevel1.setBounds(297, 107, 100, 150);
+		///Î≤ÑÌäº ÏÉùÏÑ±
+		JButton buttonToLevel1 = new JButton(""); 
+		buttonToLevel1.setIcon(new ImageIcon(Start.class.getResource("/data/start_default.png")));
+		buttonToLevel1.setBounds(275, 107, 120, 150);
+		buttonToLevel1.setBorderPainted(false);
+		buttonToLevel1.setContentAreaFilled(false);
+		buttonToLevel1.setFocusPainted(false);
 		
-		 //πˆ∆∞ √ﬂ∞°
+		 //ÔøΩÔøΩ∆∞ ÔøΩﬂ∞ÔøΩ
 		mainPanel.add(buttonToLevel1);
 		getContentPane().add(mainPanel);
 		
-		//πˆ∆∞ ≈¨∏Ø ¿Ã∫•∆Æ
+		//ÔøΩÔøΩ∆∞ ≈¨ÔøΩÔøΩ ÔøΩÃ∫ÔøΩ∆Æ
 		buttonToLevel1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -53,8 +57,12 @@ public class Start extends JFrame {
 		});
 		
 		JButton minusEgg = new JButton("-");
-		minusEgg.setBounds(256, 168, 29, 29);
+		minusEgg.setBounds(234, 168, 29, 29);
 		mainPanel.add(minusEgg);
+		minusEgg.setIcon(new ImageIcon(Start.class.getResource("/data/minus.png")));
+		minusEgg.setBorderPainted(false);
+		minusEgg.setContentAreaFilled(false);
+		minusEgg.setFocusPainted(false);
 		
 		minusEgg.addActionListener(new ActionListener() {
 			@Override
@@ -69,9 +77,13 @@ public class Start extends JFrame {
 		});
 		
 		JButton plusEgg = new JButton("+");
-		plusEgg.setBounds(409, 168, 29, 29);
+		plusEgg.setBounds(407, 168, 29, 29);
 		mainPanel.add(plusEgg);
-
+		plusEgg.setIcon(new ImageIcon(Start.class.getResource("/data/plus.png")));
+		plusEgg.setBorderPainted(false);
+		plusEgg.setContentAreaFilled(false);
+		plusEgg.setFocusPainted(false);
+		
 		plusEgg.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -84,7 +96,7 @@ public class Start extends JFrame {
 			}
 		});
 
-		//»≠∏È ¡ﬂæ”ø° ∂ÁøÏ±‚
+		//»≠ÔøΩÔøΩ ÔøΩﬂæ”øÔøΩ ÔøΩÔøΩÔøΩÔøΩ
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation((windowSize.width - frameSize.width) / 2,

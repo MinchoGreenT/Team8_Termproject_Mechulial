@@ -3,40 +3,67 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+class Component extends JFrame {
+	void makeResult(JPanel jpanel, int rank) {
+		JPanel panel_1 = new JPanel();
+	    jpanel.add(panel_1);
+	    panel_1.setLayout(null);
+	    
+	    JButton btnNewButton_1 = new JButton("ÏÇ¨ÏßÑ");
+	    btnNewButton_1.setBounds(0, 6, 75, 60);
+	    panel_1.add(btnNewButton_1);
+	   
+	    String name;
+	    String description;
+	    String link;
+	    //String name = Main.rest[rank].getName();
+	   // String description = Main.rest[rank]
+	    //String link = Main.rest[rank]
+	    
+	    JLabel content = new JLabel("\"<html>\" + name + \"<br>@\" + description + \"<br>@\" + link + \"<html>\"");
+	    content.setBounds(75, 65, 500, -60);
+	    panel_1.add(content);
+	}
+}
+
 public class Result extends JFrame {
     Result(){
-        //≈∏¿Ã∆≤
+        //ÌÉÄÏù¥ÌãÄ
         super("Result");
-        
-        for(int i=1; i<=5; i++)
-        {
-        	System.out.println(Main.getFrequency(i));
-        }
+	    Component component = new Component();
 
-        //»≠∏È ±∏º∫
+        //ÌôîÎ©¥ Íµ¨ÏÑ±
         JPanel jPanel = new JPanel();
         setSize(700, 400);
         getContentPane().add(jPanel);
         jPanel.setLayout(null);
         
-        //√≥¿Ω¿∏∑Œ
-        JButton toStart = new JButton("√≥¿Ω¿∏∑Œ");
+        //Ï≤òÏùåÏúºÎ°ú
+        JButton toStart = new JButton("Ï≤òÏùåÏúºÎ°ú");
         toStart.setBounds(577, 337, 117, 29);
         jPanel.add(toStart);
         
-        JButton quit = new JButton("¡æ∑·");
-        quit.setBounds(577, 307, 117, 29);
-        jPanel.add(quit);
-        
-       toStart.addActionListener(new ActionListener() {
+        toStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Start();
                 setVisible(false);
             }
         });
-       
-        //»≠∏È ¡ﬂæ”ø° ∂ÁøÏ±‚
+        
+        JButton quit = new JButton("Ï¢ÖÎ£å");
+        quit.setBounds(577, 307, 117, 29);
+        jPanel.add(quit);
+        
+        JPanel result = new JPanel();
+	    result.setBounds(0, 6, 581, 360);
+	    jPanel.add(result);
+	    result.setLayout(new GridLayout(5, 1));
+	    
+	   for(int i = 0; i < Main.getOutputNum(); i++)
+		   component.makeResult(result, i);
+	 
+        //ÌôîÎ©¥ Ï§ëÏïôÏóê ÎùÑÏö∞Í∏∞
         Dimension frameSize = getSize();
         Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((windowSize.width - frameSize.width) / 2,
