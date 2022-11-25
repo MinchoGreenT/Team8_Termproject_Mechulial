@@ -31,12 +31,14 @@ public class Main {
 	static int[] frequency = new int[6];
 	static int[] dist = new int[300];
 	static int outputNum;
+	static RestNode[] rest;
 	
 	static ArrayList<ArrayList<Road>> graph = new ArrayList<ArrayList<Road>>();
 	static int V, E;
 	
 	public static void main(String[] args)
 	{
+		rest = new RestNode[100];
 		for(int i=1; i<=5; i++)
 		{
 			preference[i] = 0;
@@ -61,7 +63,6 @@ public class Main {
 		 * int S = input.nextInt(); dijkstra(S);
 		 */
 		new Start();
-		RestNode[] rest = new RestNode[50];
 		//각 오브젝트는 setScore 실행
 		//오브젝트 배열 정렬
 		//상위 n개 결과 출력(GUI)
