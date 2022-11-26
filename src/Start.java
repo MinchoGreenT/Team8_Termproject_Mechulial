@@ -34,6 +34,12 @@ public class Start extends JFrame {
 		setSize(700, 400);
 		mainPanel.setLayout(null);
 		
+		JLabel description = new JLabel("");
+		description.setHorizontalAlignment(SwingConstants.CENTER);
+		description.setBounds(158, 80, 381, 46);
+		mainPanel.add(description);
+		description.setIcon(new ImageIcon(Start.class.getResource("/data/start_description.png")));
+		
 		///버튼 생성
 		JButton buttonToLevel1 = new JButton(""); 
 		buttonToLevel1.setIcon(new ImageIcon(Start.class.getResource("/data/start_default.png")));
@@ -56,7 +62,7 @@ public class Start extends JFrame {
 			}
 		});
 		
-		JButton minusEgg = new JButton("-");
+		JButton minusEgg = new JButton("");
 		minusEgg.setBounds(234, 168, 29, 29);
 		mainPanel.add(minusEgg);
 		minusEgg.setIcon(new ImageIcon(Start.class.getResource("/data/minus.png")));
@@ -76,7 +82,7 @@ public class Start extends JFrame {
 			}
 		});
 		
-		JButton plusEgg = new JButton("+");
+		JButton plusEgg = new JButton("");
 		plusEgg.setBounds(407, 168, 29, 29);
 		mainPanel.add(plusEgg);
 		plusEgg.setIcon(new ImageIcon(Start.class.getResource("/data/plus.png")));

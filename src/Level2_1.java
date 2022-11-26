@@ -21,7 +21,7 @@ public class Level2_1 extends JFrame {
 	}
 	
     Level2_1(){
-        //Å¸ÀÌÆ²
+        //Å¸ï¿½ï¿½Æ²
         super("Level2.1");
         JPanel jPanel = new JPanel();
 
@@ -29,48 +29,86 @@ public class Level2_1 extends JFrame {
         getContentPane().add(jPanel);
         jPanel.setLayout(null);
         
-        JButton buttonKorea = new JButton("ÇÑ½Ä");
+        JButton buttonKorea = new JButton("");
         buttonKorea.setBounds(19, 128, 123, 116);
+        buttonKorea.setIcon(new ImageIcon(Start.class.getResource("/data/button_korea.png")));
+        buttonKorea.setBorderPainted(false);
+        buttonKorea.setContentAreaFilled(false);
+        buttonKorea.setFocusPainted(false);
         jPanel.add(buttonKorea);
 
-        JButton buttonJapan = new JButton("ÀÏ½Ä");
+        JButton buttonJapan = new JButton("");
         buttonJapan.setBounds(154, 128, 123, 116);
+        buttonJapan.setIcon(new ImageIcon(Start.class.getResource("/data/button_japan.png")));
+        buttonJapan.setBorderPainted(false);
+        buttonJapan.setContentAreaFilled(false);
+        buttonJapan.setFocusPainted(false);
         jPanel.add(buttonJapan);
 
-        JButton buttonChina = new JButton("Áß½Ä");
+        JButton buttonChina = new JButton("");
         buttonChina.setBounds(289, 128, 123, 116);
+        buttonChina.setIcon(new ImageIcon(Start.class.getResource("/data/button_china.png")));
+        buttonChina.setBorderPainted(false);
+        buttonChina.setContentAreaFilled(false);
+        buttonChina.setFocusPainted(false);
         jPanel.add(buttonChina);
 
-        JButton buttonWestern = new JButton("¾ç½Ä");
+        JButton buttonWestern = new JButton("");
         buttonWestern.setBounds(424, 128, 123, 116);
+        buttonWestern.setIcon(new ImageIcon(Start.class.getResource("/data/button_western.png")));
+        buttonWestern.setBorderPainted(false);
+        buttonWestern.setContentAreaFilled(false);
+        buttonWestern.setFocusPainted(false);
         jPanel.add(buttonWestern);
 
-        JButton buttonSnack = new JButton("ºÐ½Ä");
+        JButton buttonSnack = new JButton("");
         buttonSnack.setBounds(559, 128, 123, 116);
+        buttonSnack.setIcon(new ImageIcon(Start.class.getResource("/data/button_snack.png")));
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(buttonSnack);
         
-        JButton koreaStatus = new JButton("¼±È£µµ");
+        JButton koreaStatus = new JButton("");
         koreaStatus.setBounds(43, 219, 69, 29);
+        koreaStatus.setBorderPainted(false);
+        koreaStatus.setContentAreaFilled(false);
+        koreaStatus.setFocusPainted(false);
         jPanel.add(koreaStatus);
         
-        JButton japanStatus = new JButton("¼±È£µµ");
+        JButton japanStatus = new JButton("");
         japanStatus.setBounds(179, 219, 69, 29);
+        japanStatus.setBorderPainted(false);
+        japanStatus.setContentAreaFilled(false);
+        japanStatus.setFocusPainted(false);
         jPanel.add(japanStatus);
         
-        JButton chinaStatus = new JButton("¼±È£µµ");
+        JButton chinaStatus = new JButton("");
         chinaStatus.setBounds(314, 219, 69, 29);
+        chinaStatus.setBorderPainted(false);
+        chinaStatus.setContentAreaFilled(false);
+        chinaStatus.setFocusPainted(false);
         jPanel.add(chinaStatus);
         
-        JButton westernStatus = new JButton("¼±È£µµ");
+        JButton westernStatus = new JButton("");
         westernStatus.setBounds(449, 219, 69, 29);
+        westernStatus.setBorderPainted(false);
+        westernStatus.setContentAreaFilled(false);
+        westernStatus.setFocusPainted(false);
         jPanel.add(westernStatus);
         
-        JButton snackStatus = new JButton("¼±È£µµ");
+        JButton snackStatus = new JButton("");
         snackStatus.setBounds(584, 219, 69, 29);
+        snackStatus.setBorderPainted(false);
+        snackStatus.setContentAreaFilled(false);
+        snackStatus.setFocusPainted(false);
         jPanel.add(snackStatus);
         
         JButton minusKorea = new JButton("-");
         minusKorea.setBounds(18, 219, 29, 29);
+        minusKorea.setBorderPainted(false);
+        minusKorea.setContentAreaFilled(false);
+        minusKorea.setFocusPainted(false);
         jPanel.add(minusKorea);
         
 		minusKorea.addActionListener(new ActionListener() {
@@ -87,6 +125,9 @@ public class Level2_1 extends JFrame {
         
         JButton plusKorea = new JButton("+");
         plusKorea.setBounds(112, 219, 29, 29);
+        plusKorea.setBorderPainted(false);
+        plusKorea.setContentAreaFilled(false);
+        plusKorea.setFocusPainted(false);
         jPanel.add(plusKorea);
         
         plusKorea.addActionListener(new ActionListener() {
@@ -103,6 +144,9 @@ public class Level2_1 extends JFrame {
         
         JButton minusJapan = new JButton("-");
         minusJapan.setBounds(153, 219, 29, 29);
+        minusJapan.setBorderPainted(false);
+        minusJapan.setContentAreaFilled(false);
+        minusJapan.setFocusPainted(false);
         jPanel.add(minusJapan);
         
         minusJapan.addActionListener(new ActionListener() {
@@ -119,6 +163,9 @@ public class Level2_1 extends JFrame {
         
         JButton plusJapan = new JButton("+");
         plusJapan.setBounds(247, 219, 29, 29);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(plusJapan);
         
         plusJapan.addActionListener(new ActionListener() {
@@ -135,6 +182,9 @@ public class Level2_1 extends JFrame {
         
         JButton minusChina = new JButton("-");
         minusChina.setBounds(288, 219, 29, 29);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(minusChina);
         
         minusChina.addActionListener(new ActionListener() {
@@ -151,6 +201,9 @@ public class Level2_1 extends JFrame {
         
         JButton plusChina = new JButton("+");
         plusChina.setBounds(382, 219, 29, 29);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(plusChina);
         
         plusChina.addActionListener(new ActionListener() {
@@ -167,6 +220,9 @@ public class Level2_1 extends JFrame {
         
         JButton minusWestern = new JButton("-");
         minusWestern.setBounds(423, 219, 29, 29);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(minusWestern);
         
         minusWestern.addActionListener(new ActionListener() {
@@ -183,6 +239,9 @@ public class Level2_1 extends JFrame {
         
         JButton plusWestern = new JButton("+");
         plusWestern.setBounds(517, 219, 29, 29);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(plusWestern);
         
         plusWestern.addActionListener(new ActionListener() {
@@ -199,6 +258,9 @@ public class Level2_1 extends JFrame {
         
         JButton minusSnack = new JButton("-");
         minusSnack.setBounds(558, 219, 29, 29);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(minusSnack);
         
         minusSnack.addActionListener(new ActionListener() {
@@ -215,6 +277,9 @@ public class Level2_1 extends JFrame {
         
         JButton plusSnack = new JButton("+");
         plusSnack.setBounds(652, 219, 29, 29);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(plusSnack);
         
         plusSnack.addActionListener(new ActionListener() {
@@ -229,8 +294,11 @@ public class Level2_1 extends JFrame {
 			}
 		});
         
-        JButton buttonToLevel3_1 = new JButton("´ÙÀ½À¸·Î");
+        JButton buttonToLevel3_1 = new JButton("");
         buttonToLevel3_1.setBounds(571, 331, 123, 35);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(buttonToLevel3_1);
         
         buttonToLevel3_1.addActionListener(new ActionListener() {
@@ -241,8 +309,11 @@ public class Level2_1 extends JFrame {
             }
         });
         
-        JButton buttonToLevel1 = new JButton("ÀÌÀüÀ¸·Î");
+        JButton buttonToLevel1 = new JButton("");
         buttonToLevel1.setBounds(6, 331, 123, 35);
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(buttonToLevel1);
         
         buttonToLevel1.addActionListener(new ActionListener() {
@@ -254,7 +325,7 @@ public class Level2_1 extends JFrame {
         });
 
 
-        //È­¸é Áß¾Ó¿¡ ¶ç¿ì±â
+        //È­ï¿½ï¿½ ï¿½ß¾Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½
         Dimension frameSize = getSize();
         Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((windowSize.width - frameSize.width) / 2,
