@@ -47,7 +47,7 @@ public class Main {
 	
 	public static void main(String[] args) throws IOException
 	{   
-		rest = new RestNode[20];
+		rest = new RestNode[32];
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(
 				new File("C:/Users/dldms/eclipse-workspace/Cloud/src/textdata/list.txt")), "UTF-8"));
@@ -62,8 +62,8 @@ public class Main {
         	int type = Integer.parseInt(str[2]);
         	String main = str[3];
         	String link = str[4];
-        	String img = str[5];
-        	rest[id] = new RestNode(id, name, main, type, link, img, preference[type], frequency[type], dist[id]);
+        	String img = "";
+        	rest[id - 24] = new RestNode(id, name, main, type, link, img, preference[type], frequency[type], dist[id]);
         }
 		// 그래프 파일 불러오기
 		Scanner input = new Scanner(new File("C:/Users/dldms/eclipse-workspace/Cloud/src/textdata/graph.txt"));
@@ -71,7 +71,7 @@ public class Main {
 		V = input.nextInt(); 
 		E = input.nextInt();
 		
-		for(int i=0; i<V+1; i++) 
+		for(int i=0; i<300; i++) 
 		{ 
 			graph.add(new ArrayList<Road>()); 
 		}
@@ -81,19 +81,11 @@ public class Main {
 			int b = input.nextInt();
 			int c = input.nextInt();
 		  
-			graph.get(a).add(new Road(b, c)); 
+			graph.get(a).add(new Road(b, c));
+			graph.get(b).add(new Road(a, c));
 		} //그래프 구성
 		
-//		dijkstra(S);
-//
-//		try {
-//			setResult();
-//		}
-//		catch(IOException e) {
-//			System.out.println("Errororroror");
-//		}
 		new Start();
-		//상위 n개 결과 출력(GUI) - Result에서 진행
 	}
 	
 	// 오브젝트를 생성하고 점수를 받아 계산하는 메서드, Result에서 부를 예정
@@ -101,7 +93,7 @@ public class Main {
 	{
         // 거리 점수 조정
         int max = 0;
-        for(int i=0; i<V; i++)
+        for(int i=24; i<V; i++)
         {
         	if(max < dist[i])
         		max = dist[i];
@@ -109,20 +101,30 @@ public class Main {
         
         for(int i=0; i<V; i++)
         {
-        	if (dist[i] <= max / 5)
+        	if (dist[i] <= max / 10)
+        		rest[i].setDistance(10);
+        	else if (dist[i] <= max / 10 * 2)
+        		rest[i].setDistance(9);
+        	else if (dist[i] <= max / 10 * 3)
+        		rest[i].setDistance(8);
+        	else if (dist[i] <= max / 10 * 4)
+        		rest[i].setDistance(7);
+        	else if (dist[i] <= max / 10 * 5)
+        		rest[i].setDistance(6);
+        	else if (dist[i] <= max / 10 * 6)
         		rest[i].setDistance(5);
-        	else if (dist[i] <= max / 5 * 2)
+        	else if (dist[i] <= max / 10 * 7)
         		rest[i].setDistance(4);
-        	else if (dist[i] <= max / 5 * 3)
+        	else if (dist[i] <= max / 10 * 8)
         		rest[i].setDistance(3);
-        	else if (dist[i] <= max / 5 * 4)
+        	else if (dist[i] <= max / 10 * 9)
         		rest[i].setDistance(2);
         	else 
         		rest[i].setDistance(1);
         }
         
         // 점수 계산
-        for(int i=0; i<3; i++)
+        for(int i=0; i<V; i++)
         {
         	if(rest[i] == null)
         		continue;
@@ -134,15 +136,36 @@ public class Main {
         // 정렬
         Arrays.sort(rest);
         
+        // 만약 같은 점수를 가졌는데 짤렸다면 버블소트를 통해 선호도가 높은 종류가 먼저 오도록 설정
+        if(rest[4].getScore() == rest[5].getScore())
+        {
+        	int idx = 5;
+        	while(rest[idx].getScore() == rest[idx+1].getScore())
+        		idx++;
+        	
+        	for(int i=4; i<idx; i++)
+        	{
+        		for(int j=i; j<idx; j++)
+        		{
+        			if(rest[i].getPreference() < rest[j].getPreference())
+        			{
+        				RestNode temp = rest[i];
+        				rest[i] = rest[j];
+        				rest[j] = temp;
+        			}
+        		}
+        	}
+        }
+        
         for(RestNode i : rest)
         {
-        	System.out.println(i.getId() + " : " + i.getScore() + " / " + i.getName());
-        }
+        	System.out.println(i.getId() + " : " + i.getScore() + " / " + i.getName() + " / " + dist[i.getId()]);
+        } 
 	}
 	
 	public static void dijkstra(int startId)
 	{
-		for(int i=0; i<V+1; i++)
+		for(int i=0; i<300; i++)
 		{
 			dist[i] = 2000000000;
 		}
@@ -152,6 +175,7 @@ public class Main {
 		q.offer(new Road(startId, 0));
 		while(!q.isEmpty()) {
 			Road curNode = q.poll();
+			System.out.println(curNode.endID);
 			if(dist[curNode.endID] < curNode.weight)
 				continue;
 			
@@ -162,6 +186,11 @@ public class Main {
 					q.offer(new Road(i.endID, dist[i.endID]));
 				}
 			}
+		}
+		
+		for(int i=0; i<=55; i++)
+		{
+			System.out.println(i + " : " + dist[i]);
 		}
 	}
 }

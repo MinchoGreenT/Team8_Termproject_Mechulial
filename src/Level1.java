@@ -1,40 +1,51 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 
 public class Level1 extends JFrame {
-    public Level1(){
+    public Level1() {
         //title
         super("Level1");
-        setSize(300, 400);
+        setSize(700, 400);
         
-        JPanel panel = new JPanel(new GridLayout(0, 3, 5, 5));
+        JPanel panel = new JPanel(new GridLayout(4, 6, 5, 5));
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
         
-        
-        for(int i=0; i<Main.V; i++)
-        {
-        	final int num = i;
-        	ChoiceButton choice = new ChoiceButton(Main.rest[i].getName());
-        	choice.addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					Main.setStart(num);
-					System.out.println(Main.S);
-					new Level2_1();
-					dispose();
-				}
-			});
-        	panel.add(choice);
+        String[] startName = new String[24];
+        try {
+        	BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(
+    				new File("C:/Users/dldms/eclipse-workspace/Cloud/src/textdata/start_list.txt")), "UTF-8"));
+            
+            // ½Ä´ç Á¤º¸ ÀÔ·Â
+            for(int i=0; i<24; i++)
+            {
+            	startName[i] = br.readLine();
+            	
+            	final int num = i;
+            	ChoiceButton choice = new ChoiceButton(startName[i]);
+            	choice.addActionListener(new ActionListener() {
+    				@Override
+    				public void actionPerformed(ActionEvent e) {
+    					Main.setStart(num);
+    					System.out.println(Main.S);
+    					new Level2_1();
+    					dispose();
+    				}
+    			});
+            	panel.add(choice);
+            }
         }
-        
-        JScrollPane choiceScroll = new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        choiceScroll.getVerticalScrollBar().setUnitIncrement(20);
-        
-        add(choiceScroll);
+        catch (IOException e) {}
+        add(panel);
 
         //È­¸é Áß¾Ó¿¡ ¶ç¿ì±â
         Dimension frameSize = getSize();
@@ -50,10 +61,9 @@ public class Level1 extends JFrame {
     static class ChoiceButton extends JButton {
     	ChoiceButton(String text) {
     		super(text);
-            setBackground(new Color(29,161,242));
-            setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
-            setForeground(Color.WHITE);
-            setSize(100, 100);
+    		setBackground(Color.WHITE);
+            setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+            setBorder(new LineBorder(Color.BLACK, 3));
     	}
     }
 }

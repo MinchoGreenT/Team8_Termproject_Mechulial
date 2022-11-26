@@ -24,10 +24,14 @@ public class Start extends JFrame {
 	setEgg setVal = new setEgg();
 	public Start() {
 
-		//타占쏙옙틀
 		super("Start");
+		
+		for(int i=1; i<=5; i++)
+		{
+			Main.preference[i] = 0;
+			Main.frequency[i] = 0;
+		}
 
-		//화占쏙옙 占쏙옙占쏙옙
 		JPanel mainPanel = new JPanel();
 		setSize(700, 400);
 		mainPanel.setLayout(null);

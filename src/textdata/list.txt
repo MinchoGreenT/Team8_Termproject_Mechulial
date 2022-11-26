@@ -1,20 +1,32 @@
-0,식당1,1,볶음밥,1234,1234
-1,식당2,5,떡볶이,1234,1234
-2,식당3,2,초밥,1234,1234
-3,식당3,2,초밥,1234,1234
-4,식당3,2,초밥,1234,1234
-5,식당3,2,초밥,1234,1234
-6,식당3,2,초밥,1234,1234
-7,식당3,2,초밥,1234,1234
-8,식당3,2,초밥,1234,1234
-9,식당3,2,초밥,1234,1234
-10,식당3,2,초밥,1234,1234
-11,식당3,2,초밥,1234,1234
-12,식당3,2,초밥,1234,1234
-13,식당3,2,초밥,1234,1234
-14,식당3,2,초밥,1234,1234
-15,식당3,2,초밥,1234,1234
-16,식당3,2,초밥,1234,1234
-17,식당3,2,초밥,1234,1234
-18,식당3,2,초밥,1234,1234
-19,식당3,2,초밥,1234,1234
+24,신의 한컵,5,김치고기마요,https://naver.me/xVlLfM9D
+25,맘보,1,제육직화,https://naver.me/5U1NBdST
+26,포밥,4,양지쌀국수,https://naver.me/xaPpV3Cp
+27,쩡이네 분식,5,쌀떡볶이,https://jjeongyine.modoo.at/
+28,치미치미,4,치킨부리또,https://naver.me/GXERyozB
+29,지하 1층 푸드코트,5,치즈밥/부리또/돈까스/짜글이,https://naver.me/GaMeXe1X
+30,만푸쿠,2,사케동,https://naver.me/xmrPBsNZ
+31,디왈리,4,치킨 마프니,https://naver.me/xVlAoEpQ
+32,이삭토스트,5,피자 토스트,https://naver.me/xPIJv3Lx
+33,유유식당,1,짜글이,https://naver.me/IgTGW6Vt
+34,육연차,2,연어덮밥,https://naver.me/xxxRwMaj
+35,경원국밥,1,뼈해장국,https://naver.me/xnPQK9JB
+36,행복로드,3,마라탕,https://naver.me/FzIibFEO
+37,더맘 돈까스,1,반반 돈까스,https://naver.me/GAip9By2
+38,준호네 부대찌개,1,부대찌개,https://naver.me/x1egXFgc
+39,싸움의 고수,1,1인보쌈,https://naver.me/FQa25mN8
+40,화로상회,1,통삼겹,https://naver.me/x22y9mME
+41,호식당,2,연어덮밥,https://naver.me/5oQiDBq4
+42,겐코,2,차슈라멘,https://naver.me/FPsB5lzW
+43,아토,2,참치회,https://naver.me/IFj9DsOM
+44,황궁짜장,3,쟁반짜장,https://naver.me/GlVUTY40
+45,버거스캔들,4,스캔들버거,https://naver.me/xmicQsjK
+46,알촌,2,순한알밥,https://naver.me/FcaWrNHp
+47,포크포크,2,매콤돈가스,https://naver.me/5uxIFgot
+48,소미랑,1,모듬전,https://naver.me/5rs9e5sC
+49,바다횟집,2,광어+연어(소),https://naver.me/xPIqgsNg
+50,회스시,2,연어+명태양념구이+매운탕,https://naver.me/GulBnk9n
+51,친친,1,통삽겹,https://naver.me/5AmfcDcR
+52,버거부기,4,클래식 치즈부기 세트,https://naver.me/5f4B43sl
+53,솥뚜껑파전,1,솥뚜껑 해물 파전,https://naver.me/GSiHNe6k
+54,서정가야밀면,1,밀면,https://naver.me/GROoVxb8
+55,밥은화,1,돼지숙주,https://naver.me/GVADokAT

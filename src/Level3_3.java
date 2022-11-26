@@ -14,8 +14,12 @@ public class Level3_3 extends JFrame {
         getContentPane().add(jPanel);
         jPanel.setLayout(null);
         
-        JButton buttonKorea = new JButton("한식");
-        buttonKorea.setBounds(19, 128, 123, 116);
+        JButton buttonKorea = new JButton();
+        buttonKorea.setBounds(19, 100, 123, 116);
+        buttonKorea.setIcon(new ImageIcon(Start.class.getResource("/data/button_korea.png")));
+        buttonKorea.setBorderPainted(false);
+        buttonKorea.setContentAreaFilled(false);
+        buttonKorea.setFocusPainted(false);
         jPanel.add(buttonKorea);
         if(Main.getFrequency(1) != 0)
         	buttonKorea.setVisible(false);
@@ -29,8 +33,12 @@ public class Level3_3 extends JFrame {
             }
         });
 
-        JButton buttonJapan = new JButton("일식");
-        buttonJapan.setBounds(154, 128, 123, 116);
+        JButton buttonJapan = new JButton();
+        buttonJapan.setBounds(154, 100, 123, 116);
+        buttonJapan.setIcon(new ImageIcon(Start.class.getResource("/data/button_japan.png")));
+        buttonJapan.setBorderPainted(false);
+        buttonJapan.setContentAreaFilled(false);
+        buttonJapan.setFocusPainted(false);
         jPanel.add(buttonJapan);
         if(Main.getFrequency(2) != 0)
         	buttonJapan.setVisible(false);
@@ -44,8 +52,12 @@ public class Level3_3 extends JFrame {
             }
         });
 
-        JButton buttonChina = new JButton("중식");
-        buttonChina.setBounds(289, 128, 123, 116);
+        JButton buttonChina = new JButton();
+        buttonChina.setBounds(289, 100, 123, 116);
+        buttonChina.setIcon(new ImageIcon(Start.class.getResource("/data/button_china.png")));
+        buttonChina.setBorderPainted(false);
+        buttonChina.setContentAreaFilled(false);
+        buttonChina.setFocusPainted(false);
         jPanel.add(buttonChina);
         if(Main.getFrequency(3) != 0)
         	buttonChina.setVisible(false);
@@ -59,8 +71,12 @@ public class Level3_3 extends JFrame {
             }
         });
 
-        JButton buttonWestern = new JButton("양식");
-        buttonWestern.setBounds(424, 128, 123, 116);
+        JButton buttonWestern = new JButton();
+        buttonWestern.setBounds(424, 100, 123, 116);
+        buttonWestern.setIcon(new ImageIcon(Start.class.getResource("/data/button_western.png")));
+        buttonWestern.setBorderPainted(false);
+        buttonWestern.setContentAreaFilled(false);
+        buttonWestern.setFocusPainted(false);
         jPanel.add(buttonWestern);
         if(Main.getFrequency(4) != 0)
         	buttonWestern.setVisible(false);
@@ -74,8 +90,12 @@ public class Level3_3 extends JFrame {
             }
         });
 
-        JButton buttonSnack = new JButton("분식");
-        buttonSnack.setBounds(559, 128, 123, 116);
+        JButton buttonSnack = new JButton();
+        buttonSnack.setBounds(559, 100, 123, 116);
+        buttonSnack.setIcon(new ImageIcon(Start.class.getResource("/data/button_snack.png")));
+        buttonSnack.setBorderPainted(false);
+        buttonSnack.setContentAreaFilled(false);
+        buttonSnack.setFocusPainted(false);
         jPanel.add(buttonSnack);
         if(Main.getFrequency(5) != 0)
         	buttonSnack.setVisible(false);

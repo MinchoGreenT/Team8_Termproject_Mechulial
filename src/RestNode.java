@@ -14,7 +14,7 @@ public class RestNode implements Comparable {
 	private final String link;
 	private final String img;
 	
-	private int perference;
+	private int preference;
 	private int frequency;
 	private int distance;
 	private int score;
@@ -31,11 +31,11 @@ public class RestNode implements Comparable {
 	public int getFoodType() {
 		return foodType;
 	}
-	public int getPerference() {
-		return perference;
+	public int getPreference() {
+		return preference;
 	}
 	public void setPerference(int perference) {
-		this.perference = perference;
+		this.preference = perference;
 	}
 	public int getFrequency() {
 		return frequency;
@@ -70,7 +70,7 @@ public class RestNode implements Comparable {
 		this.foodType = foodType;
 		this.link = link;
 		this.img = img;
-		this.perference = perference;
+		this.preference = perference;
 		this.frequency = frequency;
 		this.distance = distance;
 	}
