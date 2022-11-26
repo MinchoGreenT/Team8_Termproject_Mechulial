@@ -1,71 +1,40 @@
-import javax.swing.*;
-
-import com.sun.tools.javac.Main;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class ImagePanel extends JPanel{
-	private Image img;
-
-	public ImagePanel(Image img) {
-		this.img = img;
-		setSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		setPreferredSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		setLayout(null);
-	}
-	
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
-}
+import javax.swing.*;
 
 public class Level1 extends JFrame {
-	
-    Level1(){
+    public Level1(){
         //title
         super("Level1");
+        setSize(300, 400);
         
-        //화면 구성
-        JPanel jPanel = new JPanel();
-        setSize(700, 400);
-        getContentPane().add(jPanel);
-        jPanel.setLayout(null);
-
-        //level2로 가는 버튼 추가
-        JButton buttonToLevel2 = new JButton("Level2");
-        buttonToLevel2.setBounds(533, 326, 161, 40);
-        jPanel.add(buttonToLevel2);
-        
-        //JFrame backMap = new JFrame();
-        //backMap.setBounds(6, 0, 526, 366);
-        //backMap.setLocationRelativeTo(null);
-        //backMap.setVisible(true);
-        //Panel.add(backMap);
+        JPanel panel = new JPanel(new GridLayout(0, 3, 5, 5));
+        panel.setBackground(Color.WHITE);
+        panel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
         
         
-        //ImagePanel panel = new ImagePanel (new ImageIcon("/image/level1_map.jpg").getImage());
-        //backMap.add(panel);
-        //backMap.pack();
+        for(int i=0; i<Main.V; i++)
+        {
+        	final int num = i;
+        	ChoiceButton choice = new ChoiceButton(Main.rest[i].getName());
+        	choice.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					Main.setStart(num);
+					System.out.println(Main.S);
+					new Level2_1();
+					dispose();
+				}
+			});
+        	panel.add(choice);
+        }
         
-        //JPanel backList = new JPanel();
-        //backList.setBounds(531, 0, 169, 328);
-        //jPanel.add(backList);
-                //backList.setLayout(null);
+        JScrollPane choiceScroll = new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        choiceScroll.getVerticalScrollBar().setUnitIncrement(20);
         
-                //List 추가
-                JList list = new JList();
-                list.setBounds(6, 327, 157, -322);
-                //backList.add(list);
-
-        buttonToLevel2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new Level2_1();
-                setVisible(false);
-            }
-        });
+        add(choiceScroll);
 
         //화면 중앙에 띄우기
         Dimension frameSize = getSize();
@@ -76,5 +45,15 @@ public class Level1 extends JFrame {
         //JFrame이 정상적으로 종료되게 하는 코드
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
         setVisible(true);
+    }
+    
+    static class ChoiceButton extends JButton {
+    	ChoiceButton(String text) {
+    		super(text);
+            setBackground(new Color(29,161,242));
+            setFont(new Font("맑은 고딕", Font.BOLD, 12));
+            setForeground(Color.WHITE);
+            setSize(100, 100);
+    	}
     }
 }

@@ -38,7 +38,7 @@ public class Level3_3 extends JFrame {
         buttonJapan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(1, 3);
+            	Main.setFrequency(2, 3);
                 new Level3_4();
                 setVisible(false);
             }

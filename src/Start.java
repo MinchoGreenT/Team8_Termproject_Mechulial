@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-
 class setEgg {
 	void clickButton(JButton button, int totalEgg) {
 		if(totalEgg == 1)
@@ -25,16 +24,15 @@ public class Start extends JFrame {
 	setEgg setVal = new setEgg();
 	public Start() {
 
-		//Ÿ��Ʋ
+		//타占쏙옙틀
 		super("Start");
-		
 
-		//ȭ�� ����
+		//화占쏙옙 占쏙옙占쏙옙
 		JPanel mainPanel = new JPanel();
 		setSize(700, 400);
 		mainPanel.setLayout(null);
 		
-		///버튼 생성
+		///踰꾪듉 �깮�꽦
 		JButton buttonToLevel1 = new JButton(""); 
 		buttonToLevel1.setIcon(new ImageIcon(Start.class.getResource("/data/start_default.png")));
 		buttonToLevel1.setBounds(275, 107, 120, 150);
@@ -42,11 +40,11 @@ public class Start extends JFrame {
 		buttonToLevel1.setContentAreaFilled(false);
 		buttonToLevel1.setFocusPainted(false);
 		
-		 //��ư �߰�
+		 //占쏙옙튼 占쌩곤옙
 		mainPanel.add(buttonToLevel1);
 		getContentPane().add(mainPanel);
 		
-		//��ư Ŭ�� �̺�Ʈ
+		//占쏙옙튼 클占쏙옙 占싱븝옙트
 		buttonToLevel1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -96,7 +94,7 @@ public class Start extends JFrame {
 			}
 		});
 
-		//ȭ�� �߾ӿ� ����
+		//화占쏙옙 占쌩앙울옙 占쏙옙占쏙옙
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation((windowSize.width - frameSize.width) / 2,

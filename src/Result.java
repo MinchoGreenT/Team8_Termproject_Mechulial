@@ -2,43 +2,47 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 class Component extends JFrame {
 	void makeResult(JPanel jpanel, int rank) {
-		JPanel panel_1 = new JPanel();
-	    jpanel.add(panel_1);
-	    panel_1.setLayout(null);
+		JPanel panel_1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 	    
 	    JButton btnNewButton_1 = new JButton("사진");
-	    btnNewButton_1.setBounds(0, 6, 75, 60);
 	    panel_1.add(btnNewButton_1);
-	   
-	    String name;
-	    String description;
-	    String link;
-	    //String name = Main.rest[rank].getName();
-	   // String description = Main.rest[rank]
-	    //String link = Main.rest[rank]
 	    
-	    JLabel content = new JLabel("\"<html>\" + name + \"<br>@\" + description + \"<br>@\" + link + \"<html>\"");
-	    content.setBounds(75, 65, 500, -60);
+	    JLabel content = new JLabel("<html>" + Main.rest[rank].getName() + 
+	    		"<br>@" + Main.rest[rank].getMain() + 
+	    		"<br>@" + Main.rest[rank].getLink() + "<html>");
 	    panel_1.add(content);
+ 
+	    jpanel.add(panel_1);
 	}
 }
 
 public class Result extends JFrame {
+	
     Result(){
-        //타이틀
+        //���씠��
         super("Result");
 	    Component component = new Component();
 
-        //화면 구성
+	    Main.dijkstra(Main.S);
+
+		try {
+			Main.setResult();
+		}
+		catch(IOException e) {
+			System.out.println("Errororroror");
+		}
+	    
+        //�솕硫� 援ъ꽦
         JPanel jPanel = new JPanel();
         setSize(700, 400);
         getContentPane().add(jPanel);
         jPanel.setLayout(null);
         
-        //처음으로
+        //泥섏쓬�쑝濡�
         JButton toStart = new JButton("처음으로");
         toStart.setBounds(577, 337, 117, 29);
         jPanel.add(toStart);
@@ -55,6 +59,13 @@ public class Result extends JFrame {
         quit.setBounds(577, 307, 117, 29);
         jPanel.add(quit);
         
+        quit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        
         JPanel result = new JPanel();
 	    result.setBounds(0, 6, 581, 360);
 	    jPanel.add(result);
@@ -63,7 +74,7 @@ public class Result extends JFrame {
 	   for(int i = 0; i < Main.getOutputNum(); i++)
 		   component.makeResult(result, i);
 	 
-        //화면 중앙에 띄우기
+        //�솕硫� 以묒븰�뿉 �쓣�슦湲�
         Dimension frameSize = getSize();
         Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((windowSize.width - frameSize.width) / 2,

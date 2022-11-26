@@ -1,6 +1,11 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+
+import javax.management.remote.JMXAddressable;
+
+import java.io.*;
 
 public class Main {
 	public static int[] getPreference() {
@@ -26,6 +31,10 @@ public class Main {
 	public static void setOutputNum(int outputNum) {
 		Main.outputNum = outputNum;
 	}
+	
+	public static void setStart(int S) {
+		Main.S = S;
+	}
 
 	static int[] preference = new int[6];
 	static int[] frequency = new int[6];
@@ -34,45 +43,108 @@ public class Main {
 	static RestNode[] rest;
 	
 	static ArrayList<ArrayList<Road>> graph = new ArrayList<ArrayList<Road>>();
-	static int V, E;
+	static int V, E, S;
 	
-	public static void main(String[] args)
-	{
-		rest = new RestNode[100];
-		for(int i=1; i<=5; i++)
-		{
-			preference[i] = 0;
-			frequency[i] = 0;
+	public static void main(String[] args) throws IOException
+	{   
+		rest = new RestNode[20];
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(
+				new File("C:/Users/dldms/eclipse-workspace/Cloud/src/textdata/list.txt")), "UTF-8"));
+        String fstr;
+        
+        // 식당 정보 입력
+        while((fstr = br.readLine()) != null)
+        {
+        	String[] str = fstr.split(",");
+        	int id = Integer.parseInt(str[0]);
+        	String name = str[1];
+        	int type = Integer.parseInt(str[2]);
+        	String main = str[3];
+        	String link = str[4];
+        	String img = str[5];
+        	rest[id] = new RestNode(id, name, main, type, link, img, preference[type], frequency[type], dist[id]);
+        }
+		// 그래프 파일 불러오기
+		Scanner input = new Scanner(new File("C:/Users/dldms/eclipse-workspace/Cloud/src/textdata/graph.txt"));
+		
+		V = input.nextInt(); 
+		E = input.nextInt();
+		
+		for(int i=0; i<V+1; i++) 
+		{ 
+			graph.add(new ArrayList<Road>()); 
 		}
-		//파일에서 정점에 대한 정보들을 불러옴
-		//정점 정보를 저장
-		//해시맵에 저장 <int, Node>
-		/*
-		 * Scanner input = new Scanner(System.in);
-		 * 
-		 * V = input.nextInt(); E = input.nextInt();
-		 * 
-		 * for(int i=0; i<V+1; i++) { graph.add(new ArrayList<Road>()); }
-		 * 
-		 * for(int i=0; i<E; i++) { int a = input.nextInt(); int b = input.nextInt();
-		 * int c = input.nextInt();
-		 * 
-		 * graph.get(a).add(new Road(b, c)); } //그래프 구성
-		 * 
-		 * 
-		 * int S = input.nextInt(); dijkstra(S);
-		 */
+		
+		for(int i=0; i<E; i++) { 
+			int a = input.nextInt(); 
+			int b = input.nextInt();
+			int c = input.nextInt();
+		  
+			graph.get(a).add(new Road(b, c)); 
+		} //그래프 구성
+		
+//		dijkstra(S);
+//
+//		try {
+//			setResult();
+//		}
+//		catch(IOException e) {
+//			System.out.println("Errororroror");
+//		}
 		new Start();
-		//각 오브젝트는 setScore 실행
-		//오브젝트 배열 정렬
-		//상위 n개 결과 출력(GUI)
+		//상위 n개 결과 출력(GUI) - Result에서 진행
+	}
+	
+	// 오브젝트를 생성하고 점수를 받아 계산하는 메서드, Result에서 부를 예정
+	public static void setResult() throws IOException
+	{
+        // 거리 점수 조정
+        int max = 0;
+        for(int i=0; i<V; i++)
+        {
+        	if(max < dist[i])
+        		max = dist[i];
+        }
+        
+        for(int i=0; i<V; i++)
+        {
+        	if (dist[i] <= max / 5)
+        		rest[i].setDistance(5);
+        	else if (dist[i] <= max / 5 * 2)
+        		rest[i].setDistance(4);
+        	else if (dist[i] <= max / 5 * 3)
+        		rest[i].setDistance(3);
+        	else if (dist[i] <= max / 5 * 4)
+        		rest[i].setDistance(2);
+        	else 
+        		rest[i].setDistance(1);
+        }
+        
+        // 점수 계산
+        for(int i=0; i<3; i++)
+        {
+        	if(rest[i] == null)
+        		continue;
+        	else {
+				rest[i].setScore(preference[rest[i].getFoodType()] + frequency[rest[i].getFoodType()] + rest[i].getDistance());
+			}
+        }
+        
+        // 정렬
+        Arrays.sort(rest);
+        
+        for(RestNode i : rest)
+        {
+        	System.out.println(i.getId() + " : " + i.getScore() + " / " + i.getName());
+        }
 	}
 	
 	public static void dijkstra(int startId)
 	{
 		for(int i=0; i<V+1; i++)
 		{
-			dist[i] = Integer.MAX_VALUE;
+			dist[i] = 2000000000;
 		}
 		dist[startId] = 0;
 		
