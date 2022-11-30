@@ -19,6 +19,7 @@ public class Level1 extends JFrame {
         JPanel panel = new JPanel(new GridLayout(4, 6, 5, 5));
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+        panel.setBackground(new Color(0xFAE76C));
         
         String[] startName = new String[24];
         try {
@@ -61,9 +62,9 @@ public class Level1 extends JFrame {
     static class ChoiceButton extends JButton {
     	ChoiceButton(String text) {
     		super(text);
-    		setBackground(Color.WHITE);
-            setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-            setBorder(new LineBorder(Color.BLACK, 3));
+            setBackground(new Color(0xFAF9DC));
+            setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
+            setBorder(new LineBorder(Color.BLACK, 2));
     	}
     }
 }

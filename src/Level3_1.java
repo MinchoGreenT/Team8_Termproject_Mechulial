@@ -13,6 +13,13 @@ public class Level3_1 extends JFrame {
         setSize(700, 400);
         getContentPane().add(jPanel);
         jPanel.setLayout(null);
+        jPanel.setBackground(new Color(0xFAE76C));
+        
+        JLabel description = new JLabel("");
+		description.setHorizontalAlignment(SwingConstants.CENTER);
+		description.setBounds(158, 60, 381, 46);
+		jPanel.add(description);
+		description.setIcon(new ImageIcon(Start.class.getResource("data/frequency_description.png")));
         
         JButton buttonKorea = new JButton();
         buttonKorea.setBounds(19, 100, 123, 116);
@@ -25,7 +32,7 @@ public class Level3_1 extends JFrame {
         buttonKorea.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(1, 5);
+            	Main.setFrequency(1, 1);
                 new Level3_2();
                 setVisible(false);
             }
@@ -42,7 +49,7 @@ public class Level3_1 extends JFrame {
         buttonJapan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(2, 5);
+            	Main.setFrequency(2, 1);
                 new Level3_2();
                 setVisible(false);
             }
@@ -59,7 +66,7 @@ public class Level3_1 extends JFrame {
         buttonChina.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(3, 5);
+            	Main.setFrequency(3, 1);
                 new Level3_2();
                 setVisible(false);
             }
@@ -76,7 +83,7 @@ public class Level3_1 extends JFrame {
         buttonWestern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.setFrequency(4, 5);
+                Main.setFrequency(4, 1);
                 new Level3_2();
                 setVisible(false);
             }
@@ -93,7 +100,7 @@ public class Level3_1 extends JFrame {
         buttonSnack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(5, 5);
+            	Main.setFrequency(5, 1);
                 new Level3_2();
                 setVisible(false);
             }

@@ -13,6 +13,7 @@ public class Level3_3 extends JFrame {
         setSize(700, 400);
         getContentPane().add(jPanel);
         jPanel.setLayout(null);
+        jPanel.setBackground(new Color(0xFAE76C));
         
         JButton buttonKorea = new JButton();
         buttonKorea.setBounds(19, 100, 123, 116);

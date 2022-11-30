@@ -13,6 +13,7 @@ public class Level3_4 extends JFrame {
         setSize(700, 400);
         getContentPane().add(jPanel);
         jPanel.setLayout(null);
+        jPanel.setBackground(new Color(0xFAE76C));
         
         JButton buttonKorea = new JButton();
         buttonKorea.setBounds(19, 100, 123, 116);
@@ -27,7 +28,7 @@ public class Level3_4 extends JFrame {
         buttonKorea.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(1, 2);
+            	Main.setFrequency(1, 4);
                  new Level3_5();
                  setVisible(false);
             }
@@ -46,7 +47,7 @@ public class Level3_4 extends JFrame {
         buttonJapan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(2, 2);
+            	Main.setFrequency(2, 4);
                 new Level3_5();
                 setVisible(false);
             }
@@ -65,7 +66,7 @@ public class Level3_4 extends JFrame {
         buttonChina.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(3, 2);
+            	Main.setFrequency(3, 4);
                 new Level3_5();
                 setVisible(false);
             }
@@ -84,7 +85,7 @@ public class Level3_4 extends JFrame {
         buttonWestern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(4, 2);
+            	Main.setFrequency(4, 4);
                 new Level3_5();
                 setVisible(false);
             }
@@ -103,7 +104,7 @@ public class Level3_4 extends JFrame {
         buttonSnack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Main.setFrequency(5, 2);
+            	Main.setFrequency(5, 4);
                 new Level3_5();
                 setVisible(false);
             }

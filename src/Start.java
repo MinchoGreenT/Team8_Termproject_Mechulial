@@ -22,6 +22,7 @@ class setEgg {
 public class Start extends JFrame {
 	int totalEgg = 3;
 	setEgg setVal = new setEgg();
+	
 	public Start() {
 
 		super("Start");
@@ -34,6 +35,7 @@ public class Start extends JFrame {
 
 		JPanel mainPanel = new JPanel();
 		setSize(700, 400);
+		mainPanel.setBackground(new Color(0xFAE76C));
 		mainPanel.setLayout(null);
 		
 		JLabel description = new JLabel("");
@@ -47,12 +49,12 @@ public class Start extends JFrame {
 		buttonToLevel1.setIcon(new ImageIcon(Start.class.getResource("data/start_egg3.png")));
 		buttonToLevel1.setBounds(275, 107, 120, 150);
 		buttonToLevel1.setBorderPainted(false);
-		buttonToLevel1.setContentAreaFilled(false);
+        buttonToLevel1.setContentAreaFilled(false);
 		buttonToLevel1.setFocusPainted(false);
 		
 		 //占쏙옙튼 占쌩곤옙
+		add(mainPanel);
 		mainPanel.add(buttonToLevel1);
-		getContentPane().add(mainPanel);
 		
 		//占쏙옙튼 클占쏙옙 占싱븝옙트
 		buttonToLevel1.addActionListener(new ActionListener() {

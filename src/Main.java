@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -101,26 +102,29 @@ public class Main {
         
         for(int i=0; i<V; i++)
         {
-        	if (dist[i] <= max / 10)
+        	if (dist[i + 24] <= max / 10)
         		rest[i].setDistance(10);
-        	else if (dist[i] <= max / 10 * 2)
+        	else if (dist[i + 24] <= max / 10 * 2)
         		rest[i].setDistance(9);
-        	else if (dist[i] <= max / 10 * 3)
+        	else if (dist[i + 24] <= max / 10 * 3)
         		rest[i].setDistance(8);
-        	else if (dist[i] <= max / 10 * 4)
+        	else if (dist[i + 24] <= max / 10 * 4)
         		rest[i].setDistance(7);
-        	else if (dist[i] <= max / 10 * 5)
+        	else if (dist[i + 24] <= max / 10 * 5)
         		rest[i].setDistance(6);
-        	else if (dist[i] <= max / 10 * 6)
+        	else if (dist[i + 24] <= max / 10 * 6)
         		rest[i].setDistance(5);
-        	else if (dist[i] <= max / 10 * 7)
+        	else if (dist[i + 24] <= max / 10 * 7)
         		rest[i].setDistance(4);
-        	else if (dist[i] <= max / 10 * 8)
+        	else if (dist[i + 24] <= max / 10 * 8)
         		rest[i].setDistance(3);
-        	else if (dist[i] <= max / 10 * 9)
+        	else if (dist[i + 24] <= max / 10 * 9)
         		rest[i].setDistance(2);
         	else 
         		rest[i].setDistance(1);
+        	
+        	rest[i].setPerference(preference[rest[i].getFoodType()]);
+        	rest[i].setFrequency(frequency[rest[i].getFoodType()]);
         }
         
         // 점수 계산
@@ -136,31 +140,35 @@ public class Main {
         // 정렬
         Arrays.sort(rest);
         
-        // 만약 같은 점수를 가졌는데 짤렸다면 버블소트를 통해 선호도가 높은 종류가 먼저 오도록 설정
-        if(rest[4].getScore() == rest[5].getScore())
+        // 만약 같은 점수를 가졌는데 짤렸다면 선호도가 높은 종류가 먼저 오도록 설정
+        if(rest[getOutputNum() - 1].getScore() == rest[getOutputNum()].getScore())
         {
         	int idx = 5;
         	while(rest[idx].getScore() == rest[idx+1].getScore())
         		idx++;
+        	int endIdx = idx;
+        	idx = 5;
+        	while(idx > 0 && rest[idx].getScore() == rest[idx-1].getScore())
+        		idx--;
+        	int startIdx = idx;
         	
-        	for(int i=4; i<idx; i++)
-        	{
-        		for(int j=i; j<idx; j++)
-        		{
-        			if(rest[i].getPreference() < rest[j].getPreference())
-        			{
-        				RestNode temp = rest[i];
-        				rest[i] = rest[j];
-        				rest[j] = temp;
-        			}
-        		}
-        	}
+        	Arrays.sort(rest, startIdx, endIdx + 1, new Comparator<RestNode>() {
+				@Override
+				public int compare(RestNode o1, RestNode o2) {
+					if(o1.getPreference() < ((RestNode)o2).getPreference())
+			            return 1;
+			        return -1;
+				}
+			});
+        	
+            System.out.println(startIdx + " " + endIdx);
         }
         
         for(RestNode i : rest)
         {
-        	System.out.println(i.getId() + " : " + i.getScore() + " / " + i.getName() + " / " + dist[i.getId()]);
+        	System.out.println(i.getId() + " : " + i.getScore() + " / " + i.getName() + " / " + dist[i.getId()] + " / " + preference[i.getFoodType()]);
         } 
+        
 	}
 	
 	public static void dijkstra(int startId)

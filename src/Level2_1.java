@@ -24,10 +24,18 @@ public class Level2_1 extends JFrame {
         //Å¸ï¿½ï¿½Æ²
         super("Level2.1");
         JPanel jPanel = new JPanel();
-
+        setBackground(new Color(0xFAE76C));
         setSize(700, 400);
         getContentPane().add(jPanel);
+        
         jPanel.setLayout(null);
+        jPanel.setBackground(new Color(0xFAE76C));
+        
+        JLabel description = new JLabel("");
+		description.setHorizontalAlignment(SwingConstants.CENTER);
+		description.setBounds(158, 60, 381, 46);
+		jPanel.add(description);
+		description.setIcon(new ImageIcon(Start.class.getResource("data/preference_description.png")));
         
         JButton buttonKorea = new JButton("");
         buttonKorea.setBounds(19, 100, 123, 116);
@@ -305,6 +313,7 @@ public class Level2_1 extends JFrame {
 		});
         
         JButton buttonToLevel3_1 = new JButton("´ÙÀ½");
+        buttonToLevel3_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
         buttonToLevel3_1.setBounds(571, 331, 123, 35);
         buttonToLevel3_1.setBorderPainted(false);
         buttonToLevel3_1.setContentAreaFilled(false);
@@ -320,6 +329,7 @@ public class Level2_1 extends JFrame {
         });
         
         JButton buttonToLevel1 = new JButton("ÀÌÀü");
+        buttonToLevel1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
         buttonToLevel1.setBounds(6, 331, 123, 35);
         buttonToLevel1.setBorderPainted(false);
         buttonToLevel1.setContentAreaFilled(false);
