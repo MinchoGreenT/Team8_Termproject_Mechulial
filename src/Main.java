@@ -51,7 +51,7 @@ public class Main {
 		rest = new RestNode[32];
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(
-				new File("C:/Users/dldms/eclipse-workspace/Cloud/src/textdata/list.txt")), "UTF-8"));
+				new File("src/textdata/list.txt")), "UTF-8"));
         String fstr;
         
         // 식당 정보 입력
